@@ -23,49 +23,52 @@ var map = [
 ]; //0 1 2 3 4 5 6 7 8 9 10  12  14  16
 //11  13  15
 //buttons
-var grassButton = document.getElementById("buttonGrass");
-grassButton.addEventListener("click", function(e){
-    objectMaker.object = false;
-    objectMaker.cssClass = "floor";
-    paintObjects = 1;
-    selected(objectMaker.cssClass);
+
+document.addEventListener("click", function(e){
+
+    var buttonInformation = e.srcElement.id;
+    switch(buttonInformation){
+        case "buttonGrass":
+            objectMaker.object = false;
+            objectMaker.cssClass = "floor";
+            paintObjects = 1;
+            selected(objectMaker.cssClass);
+            break;
+            
+        case "buttonWall":
+            objectMaker.object = false;
+            objectMaker.cssClass = "wall";
+            paintObjects = 0;
+            selected(objectMaker.cssClass);
+            break;
+            
+        case "buttonDoor":
+            objectMaker.cssClass = "door";
+            objectMaker.object = true;
+            selected(objectMaker.cssClass);
+            break;
+            
+        case "buttonCoin":
+            objectMaker.cssClass = "coin";
+            objectMaker.object = true;
+            selected(objectMaker.cssClass);
+            break;
+            
+        case "buttonMonsterBlob":
+            objectMaker.cssClass = "blob";
+            objectMaker.object = true;
+            selected(objectMaker.cssClass);
+            break;
+            
+        case "buttonDelete":
+            objectMaker.cssClass = "delete";
+            objectMaker.object = false;
+            selected(objectMaker.cssClass);
+            break;
+    };
+
 });
 
-var wallButton = document.getElementById("buttonWall");
-wallButton.addEventListener("click", function(e){
-    objectMaker.object = false;
-    objectMaker.cssClass = "wall";
-    paintObjects = 0;
-    selected(objectMaker.cssClass);
-});
-
-var doorButton = document.getElementById("buttonDoor");
-doorButton.addEventListener("click", function(e){
-    objectMaker.cssClass = "door";
-    objectMaker.object = true;
-    selected(objectMaker.cssClass);
-});
-
-var coinButton = document.getElementById("buttonCoin");
-coinButton.addEventListener("click", function(e){
-    objectMaker.cssClass = "coin";
-    objectMaker.object = true;
-    selected(objectMaker.cssClass);
-});
-
-var blobButton = document.getElementById("buttonMonsterBlob");
-blobButton.addEventListener("click", function(e){
-    objectMaker.cssClass = "blob";
-    objectMaker.object = true;
-    selected(objectMaker.cssClass);
-});
-
-var deleteButton = document.getElementById("buttonDelete");
-deleteButton.addEventListener("click", function(e){
-    objectMaker.cssClass = "delete";
-    objectMaker.object = false;
-    selected(objectMaker.cssClass);
-});
 
 var paintObjects = NaN;
 
