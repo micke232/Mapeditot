@@ -2,6 +2,7 @@ var objectMaker = {
     name: "object",
     cssClass: NaN,
     object: false,
+    uniqueId: NaN,
     x: NaN,
     y: NaN
 };
@@ -23,11 +24,9 @@ var map = [
 ]; //0 1 2 3 4 5 6 7 8 9 10  12  14  16
 //11  13  15
 //buttons
-
 document.addEventListener("click", function(e){
-
-    var buttonInformation = e.srcElement.id;
-    switch(buttonInformation){
+    var buttonId = e.srcElement.id;
+    switch(buttonId){ //Made a switch for all the buttons.
         case "buttonGrass":
             objectMaker.object = false;
             objectMaker.cssClass = "floor";
@@ -65,9 +64,32 @@ document.addEventListener("click", function(e){
             objectMaker.object = false;
             selected(objectMaker.cssClass);
             break;
+            
+        case "buttonUniqueId": //might want to change this name later. 
+            objectMaker.cssClass = "add";
+            var checker = objectMaker.cssClass;
+            objectMaker.object = false;
+            objectUniqueId();
+            break;
     };
-
 });
+
+//unique id button
+function objectUniqueId(){
+  var x = objectMaker.x;
+  var y = objectMaker.y;
+    for (var i in objectsArray){
+        if (x == objectsArray[i].x && y == objectsArray[i].y){
+          objectsArray[i].uniqueId = document.getElementById("uniqueValueIdInput").value;
+          document.getElementById("consoleDiv").innerHTML = "Unique ID of object is now = " + document.getElementById("uniqueValueIdInput").value + "<br>" + "position x " + x + " y " + y;
+          document.getElementById("uniqueValueIdInput").value = "";
+          
+          
+		}
+	}
+};
+
+
 
 
 var paintObjects = NaN;
@@ -155,6 +177,7 @@ function makeNewObject(){
     //pushes new objects into "objects".
     var object = {
         name: "object",
+        uniqueId: objectMaker.uniqueId,
         cssClass: objectMaker.cssClass,
         object: objectMaker.object,
         x: objectMaker.x,
