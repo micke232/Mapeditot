@@ -2,6 +2,7 @@
 
 To do:
 
-* Merge objects with triggers.
-* Back end system for saving files localy on user computer.
+* Merge objects with triggers.                              [1]
+* Make a add soundfunction.                                 [O]
+* Back end system for saving files localy on user computer. [O]
 
