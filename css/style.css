@@ -1,3 +1,10 @@
+button {
+  margin: 5px;
+}
+input {
+  margin: 5px;
+}
+
 #map {
   margin: 0 auto;
   width: 1309px;
