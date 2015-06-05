@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <title></title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/select.css">
+    <title></title>
 
-    </head>
+  </head>
 
-    <body>
+  <body>
 
-        <div id="map"></div>
-        
-        
-        <div class="clear"></div>
-        
-        <div class="controlpanel">
-        <button id="buttonGrass">Floor</button> <button id="buttonWall">Wall</button> <button id="buttonDoor">Door</button> <button id="buttonCoin">Coin</button> <button id="buttonMonsterBlob">Monster Blob</button> <button id="buttonDelete">Delete</button>
-<br>
-<br>
-       <form action="">
-           <input type="text" id="uniqueValueIdInput" value=""> <input type="button" id="buttonUniqueId" value="Set unique id for an object">
-           <br>
-           <br>
-       </form>
-           <br>
-            <div id="selected"></div><div class="clear"></div>Selected object/tool
-            <br>
-            <br>
-          <center>The console</center>
-            <div id="consoleDiv"></div>
-        </div>
-                
-            
-            <script src="js/scripts.js"></script>
+    <div id="map"></div>
 
-            </body>
-        </html>
+
+    <div class="clear"></div>
+
+    <div class="controlpanel">
+      <button id="buttonGrass">Floor</button> <button id="buttonWall">Wall</button> <button id="buttonDoor">Door</button> <button id="buttonCoin">Coin</button> <button id="buttonMonsterBlob">Monster Blob</button>
+      <br>
+      <br>
+      <button id="buttonDelete">Delete</button> <button id="buttonSelect">Select</button>
+      <br>
+      <br>
+      <form action="">
+        <input type="button" id="buttonUniqueId" value="Set unique id for an object"> <input type="text" id="uniqueValueIdInput" value=""> 
+        <br>
+        <br>
+      </form>
+      <input type="button" id="buttonSave" value="Save"> <input type="text" id="fileName"> 
+      <br>
+      <br>
+      <input type="file" value="" id="fileInput"> 
+      <br>
+      <br>
+      <div id="selected"></div><div class="clear"></div>Selected object/tool
+      <br>
+      <br>
+      <center>The console</center>
+      <div id="consoleDiv"></div>
+      <pre id="fileDisplayArea"></pre>
+    </div>
+
+
+    <script src="js/scripts.js"></script>
+
+  </body>
+</html>
