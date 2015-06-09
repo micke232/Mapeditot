@@ -23,7 +23,7 @@ var map = [
   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],//9
   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] //10
 ]; //0 1 2 3 4 5 6 7 8 9 10  12  14  16
-//11  13  15
+                         //11  13  15
 
 
 
@@ -163,6 +163,16 @@ function drawMap(){
         if (x == objectsArray[i].x && y == objectsArray[i].y && objectsArray[i].cssClass == "troll"){
           newDiv.className = "";
           newDiv.className = "troll sel";
+        }
+        
+        if (x == objectsArray[i].x && y == objectsArray[i].y && objectsArray[i].cssClass == "hero"){
+          newDiv.className = "";
+          newDiv.className = "hero sel";
+        }
+        
+        if (x == objectsArray[i].x && y == objectsArray[i].y && objectsArray[i].cssClass == "end"){
+          newDiv.className = "";
+          newDiv.className = "end sel";
         }
 
         element.appendChild(newDiv);
@@ -369,6 +379,20 @@ document.addEventListener("click", function(e){
     
     case "buttonGnome": 
       objectMaker.cssClass = "tomte";
+      var checker = objectMaker.cssClass;
+      objectMaker.object = true;
+      selected(objectMaker.cssClass);
+      break;
+    
+    case "buttonStart": 
+      objectMaker.cssClass = "hero";
+      var checker = objectMaker.cssClass;
+      objectMaker.object = true;
+      selected(objectMaker.cssClass);
+      break;
+    
+    case "buttonEnd": 
+      objectMaker.cssClass = "end";
       var checker = objectMaker.cssClass;
       objectMaker.object = true;
       selected(objectMaker.cssClass);
